@@ -121,7 +121,7 @@ export class DemoComponent {
     console.log(event);
     // this.popover.isOpen() ? this.popover.close() : this.popover.open();
     this.popover.open();
-    console.log(this.popover)
+    this.popover. =
 
   }
 }
