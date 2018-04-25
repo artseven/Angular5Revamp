@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class DemoComponent {
-
+  view: string = 'month';
+  viewDate = new Date();
+  events = [];
 }
