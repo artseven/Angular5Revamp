@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'angular-calendar';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 // import { DemoUtilsModule } from '../demo-utils/module';
-import { DemoComponent } from './component';
+import { DemoComponent } from './demo.component';
 
 @NgModule({
   imports: [
