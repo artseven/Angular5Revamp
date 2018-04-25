@@ -12,7 +12,7 @@ import { DemoComponent } from './demo.component';
     FormsModule,
     NgbModalModule.forRoot(),
     CalendarModule.forRoot(),
-    NgbModule
+    NgbModule,
     // DemoUtilsModule
   ],
   declarations: [DemoComponent],

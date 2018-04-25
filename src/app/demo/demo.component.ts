@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy, ViewChild,TemplateRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild,TemplateRef, ElementRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject'
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent } from 'angular-calendar';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import {
   startOfDay,
   endOfDay,
@@ -39,7 +39,8 @@ const colors: any = {
 export class DemoComponent {
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
-
+  @ViewChild('popover') public popover: NgbPopover;
+  @ViewChild('base') el: ElementRef;
   view: string = 'month';
   imgUrl: string;
   popContent = 'Blah';
@@ -51,9 +52,11 @@ export class DemoComponent {
   smth: CalendarEvent;
   viewDate = new Date();
 
-  constructor(private modal: NgbModal) {
-
+  constructor(
+    private modal: NgbModal) {
   }
+
+
 
   actions: CalendarEventAction[] = [
     // {
@@ -114,5 +117,11 @@ export class DemoComponent {
     this.modal.open(this.modalContent, { size: 'lg' });
   }
 
-  popover(event) {}
+  doPop(event): void {
+    console.log(event);
+    // this.popover.isOpen() ? this.popover.close() : this.popover.open();
+    this.popover.open();
+    console.log(this.popover)
+
+  }
 }

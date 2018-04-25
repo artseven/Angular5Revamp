@@ -1,3 +1,7 @@
+<span ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top"
+        #popover="ngbPopover" style="position: absolute">
+</span>
+
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
     <h5 class="modal-title">Event action occurred</h5>
@@ -20,7 +24,7 @@
   </div>
 
 </ng-template>
-
+<div #base></div>
 <div class="row text-center" style="padding: 50px">
   <div class="col-md-4">
     <div class="btn-group">
@@ -84,7 +88,7 @@
     [refresh]="refresh"
     [activeDayIsOpen]="activeDayIsOpen"
     (dayClicked)="dayClicked($event.day)"
-    (mouseover)="popover($event)"
+    (mouseover)="doPop($event)"
     (eventClicked)="handleEvent('Clicked', $event.event)"
     (eventTimesChanged)="eventTimesChanged($event)"
     >

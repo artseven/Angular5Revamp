@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, ElementRef } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
 import { CalendarModule } from 'angular-calendar';
 import { DemoModule } from './demo/demo.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -18,8 +17,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CalendarModule.forRoot(),
     DemoModule,
     NgbModule.forRoot()
+
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
