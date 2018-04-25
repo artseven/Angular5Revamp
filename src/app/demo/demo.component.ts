@@ -11,12 +11,15 @@ import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent } fr
 
 export class DemoComponent {
   view: string = 'month';
+  popContent = 'Blah';
   viewDate = new Date();
   events = [];
   nextDate = new Date('April 26, 2018');
   constructor() {
-    this.events.push({start: this.viewDate, end: this.viewDate});
-    this.events.push({start: this.viewDate, end: this.nextDate});
+
+    this.events.push({start: this.viewDate, end: this.viewDate, title: 'TWO DAY EVENT'});
+    this.events.push({start: this.viewDate, end: this.nextDate, title: 'ONE DAY EVENT'});
+    this.events.push
 
   }
 }

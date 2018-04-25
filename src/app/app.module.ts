@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CalendarModule } from 'angular-calendar';
 import { DemoModule } from './demo/demo.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DemoModule } from './demo/demo.module';
     BrowserModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot(),
-    DemoModule
+    DemoModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
