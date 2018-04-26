@@ -1,3 +1,11 @@
-<p>
-  demo-reactive-form works!
-</p>
+<form [formGroup]="nameForm" novalidate>
+  <div class="form-group">
+    <label>What's you first name?</label>
+    <input class="form-control" formControlName="fistname">
+  </div>
+  <div class="form-group">
+    <label>What's you last name?</label>
+    <input class="form-control" formControlName="lastname">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
