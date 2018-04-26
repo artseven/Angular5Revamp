@@ -1,5 +1,8 @@
 <div>
   <form (ngSubmit)="onSubmit()" #form>
-
+    <div class="form-group">
+      <label for="firstname">What's your first name?</label>
+      <input type="text" class="form-control" id="firstname" required [(ngModel)]="model.firstname" name="firstname" #firstname="ngModel" [ngModelOptions]="{ updateOn: 'change'}">
+    </div>
   </form>
 </div>

@@ -9,6 +9,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 export class DemoFormComponent implements OnInit   {
 
+  model = {
+    firstname: "",
+    lastname: ""
+  }
   constructor() {}
 
   ngOnInit() {}
