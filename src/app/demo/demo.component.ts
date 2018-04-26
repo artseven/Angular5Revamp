@@ -84,7 +84,7 @@ export class DemoComponent {
       title: 'A 3 day event',
       color: colors.red,
       actions: this.actions,
-      imgUrl: 'https://www.swinglifestyle.com/s1sp1cture5a/MiamiLover/324miamilover_sq.jpg'
+      imgUrl: '/assets/img/324miamilover_sq'
     },
     {
       start: startOfDay(new Date()),
@@ -112,16 +112,32 @@ export class DemoComponent {
     }
   ];
 
+  activeDayIsOpen: boolean = true;
+
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+    if (isSameMonth(date, this.viewDate)) {
+      if (
+        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0
+      ) {
+        this.activeDayIsOpen = false;
+      } else {
+        this.activeDayIsOpen = true;
+        this.viewDate = date;
+      }
+    }
+  }
+
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
     this.modal.open(this.modalContent, { size: 'lg' });
   }
 
+
   doPop(event): void {
     console.log(event);
     // this.popover.isOpen() ? this.popover.close() : this.popover.open();
-    this.popover.open();
-    this.popover. =
+    // this.popover.open();
 
   }
 }

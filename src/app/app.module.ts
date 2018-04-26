@@ -7,16 +7,18 @@ import { AppComponent } from './app.component';
 import { CalendarModule } from 'angular-calendar';
 import { DemoModule } from './demo/demo.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DemoFormComponent } from './demo-form/demo-form.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot(),
     DemoModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
 
   ],
   providers: [  ],

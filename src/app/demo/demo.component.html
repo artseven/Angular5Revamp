@@ -1,6 +1,151 @@
-<span ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="bottom" popoverTitle="Popover on top"
-        #popover="ngbPopover" style="position: absolute">
-</span>
+<!-- <span ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="bottom" popoverTitle="Popover on top"
+        #popover="ngbPopover" style="position: relative">
+</span> -->
+<ng-template #popContent >
+    <strong>Who:&nbsp;</strong>
+
+    <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+    respectful3rd4u<br>
+  <strong>When:&nbsp;</strong>
+
+    At Night<br>
+
+  <strong>Distance:&nbsp;</strong>
+  4 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  just4funseattle<br>
+  <strong>When:&nbsp;</strong>
+
+    Anytime<br>
+
+  <strong>Distance:&nbsp;</strong>
+  5 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  beachbum1115<br>
+  <strong>When:&nbsp;</strong>
+
+    Anytime<br>
+
+  <strong>Distance:&nbsp;</strong>
+  10 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  letitride51<br>
+  <strong>When:&nbsp;</strong>
+
+    At Night<br>
+
+  <strong>Distance:&nbsp;</strong>
+  26 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  Secrets703<br>
+  <strong>When:&nbsp;</strong>
+
+    At Night<br>
+
+  <strong>Distance:&nbsp;</strong>
+  74 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  your_secret_lover<br>
+  <strong>When:&nbsp;</strong>
+
+    At Night<br>
+
+  <strong>Distance:&nbsp;</strong>
+  184 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  webedelicious<br>
+  <strong>When:&nbsp;</strong>
+
+    At Night<br>
+
+  <strong>Distance:&nbsp;</strong>
+  187 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  pilot6969<br>
+  <strong>When:&nbsp;</strong>
+
+    Anytime<br>
+
+  <strong>Distance:&nbsp;</strong>
+  192 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  WJSHairless<br>
+  <strong>When:&nbsp;</strong>
+
+    Anytime<br>
+
+  <strong>Distance:&nbsp;</strong>
+  193 Miles
+
+  <br>
+
+  <strong>Who:&nbsp;</strong>
+
+  <img style="width: 50px" src="\assets\img\324miamilover_sq.jpg">
+  beachmanzuma<br>
+  <strong>When:&nbsp;</strong>
+
+    At Night<br>
+
+  <strong>Distance:&nbsp;</strong>
+  194 Miles
+
+  <br>
+</ng-template>
+
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+  <div class="cal-cell-top">
+    <!-- <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span> -->
+    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+  </div>
+  <small
+   triggers="mouseenter:mouseleave"
+   [ngbPopover]="popContent"
+   placement="left"
+   *ngIf="day.events.length > 0"
+   style="margin: 5px"> {{ day.events.length }} events</small>
+</ng-template>
+
 
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
@@ -87,6 +232,7 @@
     [events]="events"
     [refresh]="refresh"
     [activeDayIsOpen]="activeDayIsOpen"
+    [cellTemplate]="customCellTemplate"
     (dayClicked)="dayClicked($event.day)"
     (mouseover)="doPop($event)"
     (eventClicked)="handleEvent('Clicked', $event.event)"
