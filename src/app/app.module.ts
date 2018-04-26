@@ -8,6 +8,7 @@ import { CalendarModule } from 'angular-calendar';
 import { DemoModule } from './demo/demo.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DemoFormComponent } from './demo-form/demo-form.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { DemoFormComponent } from './demo-form/demo-form.component';
     CalendarModule.forRoot(),
     DemoModule,
     NgbModule.forRoot(),
+    FormsModule
 
   ],
   providers: [  ],
