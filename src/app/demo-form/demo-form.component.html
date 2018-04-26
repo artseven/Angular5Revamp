@@ -1,5 +1,5 @@
-<div style="width: 500px; padding: 150px">
-  <form (ngSubmit)="onSubmit()" #form>
+<div>
+  <form (ngSubmit)="onSubmit()" #form [ngFormOptions]="{ updateOn: 'change' }">
     <div class="form-group">
       <label for="firstname">What's your first name?</label>
       <input
@@ -10,7 +10,7 @@
        [(ngModel)]="model.firstname"
        name="firstname"
        #firstname="ngModel"
-       [ngModelOptions]="{ updateOn: 'change'}"/>
+      />
 
       <div [hidden]="firstname.valid || firstname.pristine" class="alert alert-danger">
         First name is required
@@ -26,7 +26,7 @@
         [(ngModel)]="model.lastname"
         name="lastname"
         #lastname="ngModel"
-        [ngModelOptions]="{ updateOn: 'change'}"/>
+      />
 
       <div [hidden]="lastname.valid || lastname.pristine" class="alert alert-danger">
         Last name is required
