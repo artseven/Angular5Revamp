@@ -1,4 +1,4 @@
-<div>
+<div style="width: 500px; padding: 150px">
   <form (ngSubmit)="onSubmit()" #form>
     <div class="form-group">
       <label for="firstname">What's your first name?</label>
@@ -32,5 +32,9 @@
         Last name is required
       </div>
     </div>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
+  <div *ngIf="model.firstname && model.lastname">
+    <h3>Hello {{model.firstname}} {{ model.lastname}}</h3>
+  </div>
 </div>

@@ -8,11 +8,13 @@ import { CalendarModule } from 'angular-calendar';
 import { DemoModule } from './demo/demo.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DemoFormComponent } from './demo-form/demo-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DemoReactiveFormComponent } from './demo-reactive-form/demo-reactive-form.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    DemoReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     CalendarModule.forRoot(),
     DemoModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [  ],
