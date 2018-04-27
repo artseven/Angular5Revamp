@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-demo-reactive-form',
+  selector: ' reactive-form',
   templateUrl: './demo-reactive-form.component.html',
   styleUrls: ['./demo-reactive-form.component.css'],
   encapsulation: ViewEncapsulation.None
@@ -16,14 +16,14 @@ export class DemoReactiveFormComponent implements OnInit {
     this.nameForm = new FormGroup({
       firstname:  new FormControl('', {
         validators: Validators.required,
-        updateOn: 'change'
+        // updateOn: 'change'
       }),
       lastname: new FormControl('', {
         validators: Validators.required,
-        updateOn: 'change'
+        // updateOn: 'change'
       })
 
-    });
+    }, { updateOn: 'change'});
 
   }
 

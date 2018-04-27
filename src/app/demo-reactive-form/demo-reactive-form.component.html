@@ -9,3 +9,6 @@
   </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
+<div *ngIf="nameForm.value.firstname && nameForm.value.lastname">
+  <h3>Hello {{ nameForm.value.firstname }} {{  nameForm.value.lastname }}</h3>
+</div>
